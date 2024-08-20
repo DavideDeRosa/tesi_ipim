@@ -1,6 +1,5 @@
 import json
 import boto3
-from decimal import Decimal
 
 client = boto3.client('dynamodb')
 dynamodb = boto3.resource("dynamodb")
@@ -25,7 +24,7 @@ def lambda_handler(event, context):
                 Key={'id': event['pathParameters']['id']})
             body = body["Item"]
             responseBody = [
-                {'price': float(body['price']), 'id': body['id'], 'name': body['name'], 'description': body['description']}]
+                {'price': body['price'], 'id': body['id'], 'name': body['name'], 'description': body['description']}]
             body = responseBody
         elif event['routeKey'] == "GET /items":
             body = table.scan()
@@ -35,7 +34,7 @@ def lambda_handler(event, context):
             responseBody = []
             for items in body:
                 responseItems = [
-                    {'price': float(items['price']), 'id': items['id'], 'name': items['name'], 'description': items['description']}]
+                    {'price': items['price'], 'id': items['id'], 'name': items['name'], 'description': items['description']}]
                 responseBody.append(responseItems)
             body = responseBody
         elif event['routeKey'] == "PUT /items":
@@ -43,7 +42,7 @@ def lambda_handler(event, context):
             table.put_item(
                 Item={
                     'id': requestJSON['id'],
-                    'price': Decimal(str(requestJSON['price'])),
+                    'price': requestJSON['price'],
                     'name': requestJSON['name'],
                     'description': requestJSON['description']
                 })
