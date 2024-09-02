@@ -1,0 +1,3 @@
+in questo ho trovato una semi introduzione carina: https://arxiv.org/pdf/2112.12921
+qualcosina per l'introduzione: http://faculty.washington.edu/wlloyd/courses/tcss562_f2018/talks/ServerlessComputing-DesignImplementationandPerformance.pdf
+questo ha veramente molto da cui prendere spunto: https://www.doc.ic.ac.uk/~rbc/papers/fse-serverless-17.pdf

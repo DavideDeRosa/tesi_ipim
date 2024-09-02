@@ -1,0 +1,284 @@
+\documentclass[12pt,a4paper,twoside]{book}
+
+\usepackage[utf8]{inputenc}
+\usepackage[a4paper,inner=3.5cm,outer=2.5cm]{geometry}
+
+\usepackage[titletoc,title,toc,page]{appendix}
+\usepackage{verbatim}
+\usepackage{placeins}
+\usepackage{listings}
+\usepackage{hyperref}
+\usepackage[italian]{babel}
+\usepackage{tikz}
+\usepackage{parskip}
+
+\usepackage{graphicx}
+\usepackage{blindtext}
+\usepackage{chngcntr}
+\counterwithin{table}{chapter}
+
+\usepackage{newlfont}
+\usepackage{fancyhdr}
+\usepackage{indentfirst}
+\usepackage[utf8]{inputenc}
+\usepackage{float}
+\usepackage{hyperref}
+\usepackage[capitalize,noabbrev]{cleveref}
+\usepackage{soul}
+\usepackage[font=footnotesize,labelfont=bf]{caption}
+
+\usepackage{multirow}
+\usepackage{hyphenat}
+\hyphenation{mate-mati-ca recu-perare}
+
+\usepackage{lscape} 
+
+\usepackage{natbib}
+\bibliographystyle{alpha}
+\setcitestyle{super,open={[},close={]}}
+
+\newcommand{\rom}[1]{\uppercase\expandafter{\romannumeral #1\relax}}
+
+\usepackage{pdfpages}
+
+\begin{document}
+% Per spostare i vari elementi più su o più giù gioca con i valori di vspace che ci sono tra uno e l'altro
+\pagestyle{empty}
+\newgeometry{left=2cm, right=2cm}
+\begin{titlepage}
+\begin{center}
+    {{\Large{\textsc{Alma Mater Studiorum $\cdot$ Università di Bologna}}}}
+    \rule[0.1cm]{\textwidth}{0.1mm}
+    \rule[0.5cm]{\textwidth}{0.6mm}\\
+    {\small{\bf SCUOLA DI SCIENZE\\
+    Corso di Laurea in Informatica per il Management}}
+\end{center}
+
+\vspace{25mm}
+
+\begin{center}
+    {\LARGE{\bf ANALISI COMPARATIVA }}\\
+    \vspace{3mm}
+    {\LARGE{\bf DI SOLUZIONI SERVERLESS}}\\
+\end{center}
+
+\vspace{60mm}
+\par
+\noindent
+\begin{minipage}[t]{0.04\textwidth}
+~
+\end{minipage}
+\begin{minipage}[t]{0.4\textwidth}
+{\large{\bf Relatore:\\
+Chiar.mo Prof.\\
+Rossi Davide}}
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.4\textwidth}\raggedleft
+{\large{\bf Presentata da:\\
+De Rosa Davide}}
+\end{minipage}
+\begin{minipage}[t]{0.04\textwidth}
+~
+\end{minipage}
+
+\vspace{30mm}
+
+\begin{center}
+    {\large{\bf \rom{2} Sessione\\
+    Anno Accademico 2023/2024 }}
+\end{center}
+\end{titlepage}
+
+\restoregeometry
+\newpage
+\begin{center}
+    (DA FARE ALLA FINE)\\
+    5 parole chiave per caratterizzare il contenuto della dissertazione:\\ (se non ti piacciono così sparse puoi anche semplicamente scriverle su una riga sola)
+\end{center}
+
+% https://tex.stackexchange.com/questions/26538/words-scattered-randomly-in-on-coverpage
+\begin{tikzpicture}[overlay,remember picture,shift=(current page.center)]
+\pgfmathsetseed{3}
+
+
+\foreach [count=\count] \word in {Parola 1, parola 2, parola 3, parola 4, parola 5} {
+\node [
+    xshift={(mod(\count,3)-1)*(\paperwidth/4)},
+    yshift={(mod(\count,7)-3)*(\paperwidth/6)},
+    xshift=rand*4cm,
+    yshift=rand*2cm,
+    % rotate=rand*35,
+    % opacity=rnd*0.5+0.125,
+    font=\large] {\word};
+}
+\end{tikzpicture}
+\newpage
+
+\newpage~\newpage
+\pagenumbering{gobble}
+\chapter*{Abstract}
+abstract
+
+\topmargin=-1cm
+\tableofcontents
+\thispagestyle{empty}
+\listoftables
+\thispagestyle{empty}
+\listoffigures
+\thispagestyle{empty}
+\newpage~\newpage
+
+\pagenumbering{arabic}
+\setcounter{chapter}{0}
+\raggedbottom
+\chapter{Introduzione} \label{chap:intro}
+\pagestyle{plain}
+\setcounter{page}{1}
+\section{Scopo della Tesi}
+Introduzione agli obiettivi della tesi, come il confronto tra soluzioni serverless e l'analisi di AWS e Google Cloud.
+
+\section{Metodologia}
+Descrizione dell'approccio adottato per l'analisi e il confronto delle due piattaforme.
+
+\section{Struttura della Tesi}
+Breve descrizione dei capitoli successivi.
+
+\chapter{Nozioni di base su Serverless}
+
+\section{Definizione e Concetti Fondamentali}
+Introduzione al concetto di computing serverless, spiegando cosa si intende per "serverless" e quali sono i suoi principi di base (e.g., scalabilità automatica, pricing per utilizzo).
+
+\section{Funzioni Serverless}
+Spiegazione di cosa sono le funzioni serverless (FaaS - Function as a Service), come funzionano, e quali sono i loro principali vantaggi e svantaggi rispetto all'approccio tradizionale.
+
+\chapter{Introduzione ad AWS Lambda e Google Cloud Functions}
+
+\section{AWS Lambda}
+\subsection{Panoramica di AWS Lambda}
+Breve storia e introduzione di AWS Lambda.
+
+\subsection{Caratteristiche Principali}
+Descrizione delle caratteristiche principali di AWS Lambda (e.g., trigger, runtime supportati, integrazioni).
+
+\subsection{Deploy su AWS Lambda}
+Descrizione del processo di deploy di funzioni serverless su AWS.
+
+\section{Google Cloud Functions}
+\subsection{Panoramica di Google Cloud Functions}
+Breve introduzione a Google Cloud Functions.
+
+\subsection{Caratteristiche Principali}
+Descrizione delle caratteristiche principali di Google Cloud Functions.
+
+\subsection{Deploy su Google Cloud Functions}
+Spiegazione del processo di deploy su Google Cloud.
+
+\chapter{Integrazione con Database NoSQL}
+
+\section{Introduzione ai Database NoSQL}
+\subsection{Caratteristiche dei Database NoSQL}
+Panoramica sui database NoSQL, con un focus su scalabilità, flessibilità del modello di dati e performance.
+
+\subsection{Vantaggi dell'Utilizzo di NoSQL in un Contesto Serverless}
+Spiegazione di come i database NoSQL siano particolarmente adatti per architetture serverless.
+
+\section{Amazon DynamoDB}
+\subsection{Panoramica su DynamoDB}
+Introduzione a DynamoDB, il database NoSQL di AWS.
+
+\subsection{Integrazione di AWS Lambda con DynamoDB}
+Spiegazione di come le funzioni AWS Lambda interagiscono con DynamoDB, incluso l'utilizzo di trigger, accessi e operazioni CRUD (Create, Read, Update, Delete).
+
+\section{Google Cloud Firestore}
+\subsection{Panoramica su Firestore}
+Introduzione a Google Cloud Firestore, il database NoSQL di Google Cloud.
+
+\subsection{Integrazione di Google Cloud Functions con Firestore}
+Spiegazione di come le funzioni Google Cloud interagiscono con Firestore, includendo l'accesso, le operazioni CRUD, e l'utilizzo di trigger.
+
+\chapter{Architettura delle API Serverless}
+\section{Approccio 1: Funzione Unica per API}
+\subsection{Descrizione dell’Approccio}
+Descrizione dell’Approccio
+
+\subsection{Implementazione su AWS Lambda}
+Implementazione su AWS Lambda
+
+\subsection{Implementazione su Google Cloud Functions}
+Implementazione su Google Cloud Functions
+
+\subsection{Vantaggi e Svantaggi}
+Vantaggi e Svantaggi
+
+\section{Approccio 2: Funzione per Ogni Chiamata API}
+\subsection{Descrizione dell’Approccio}
+Descrizione dell’Approccio
+
+\subsection{Implementazione su AWS Lambda}
+Implementazione su AWS Lambda
+
+\subsection{Implementazione su Google Cloud Functions}
+Implementazione su Google Cloud Functions
+
+\subsection{Vantaggi e Svantaggi}
+Vantaggi e Svantaggi
+
+\chapter{Analisi Comparativa tra AWS Lambda e Google Cloud Functions}
+\section{Performance}
+Tempo di Esecuzione e Latency
+altro?
+
+\section{Costi}
+costi, non credo ci sia bisogno di distizione tra i due approcci, il numero di chiamate dovrebbe essere lo stesso
+
+\section{Integrazioni e Compatibilità}
+magari anche facilità di collegamento tra i diversi servizi (function e db)
+
+\section{Sviluppo e Debugging}
+facilità di sviluppo e debug
+
+\chapter{Caso Studio: Confronto tra le Due Soluzioni}
+\section{Descrizione delle Soluzioni Software}
+descrizione
+
+\section{Implementazione su AWS Lambda}
+\subsection{Deploy dell’Approccio Funzione Unica}
+Deploy dell’Approccio Funzione Unica
+
+\subsection{Deploy dell’Approccio Funzione per Ogni Chiamata}
+Deploy dell’Approccio Funzione per Ogni Chiamata
+
+\subsection{Risultati e Analisi}
+Risultati e Analisi
+
+\section{Implementazione su Google Cloud Functions}
+\subsection{Deploy dell’Approccio Funzione Unica}
+Deploy dell’Approccio Funzione Unica
+
+\subsection{Deploy dell’Approccio Funzione per Ogni Chiamata}
+Deploy dell’Approccio Funzione per Ogni Chiamata
+
+\subsection{Risultati e Analisi}
+Risultati e Analisi
+
+\section{Confronto dei Risultati}
+\subsection{Performance e Scalabilità}
+Performance e Scalabilità
+
+\subsection{Costi e Efficienza}
+Costi e Efficienza
+
+\subsection{Usabilità e Facilità di Deploy}
+Usabilità e Facilità di Deploy
+
+\chapter{Discussione dei Risultati}
+considerazioni generali, limiti dello studio o altro
+
+\chapter{Conclusioni}
+sintesi dei risultati e conclusioni
+
+\renewcommand{\bibsection}{}
+\chapter*{Riferimenti bibliografici}
+\bibliography{refs}
+\end{document}
