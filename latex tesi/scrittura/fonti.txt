@@ -1,3 +1,13 @@
 in questo ho trovato una semi introduzione carina: https://arxiv.org/pdf/2112.12921
 qualcosina per l'introduzione: http://faculty.washington.edu/wlloyd/courses/tcss562_f2018/talks/ServerlessComputing-DesignImplementationandPerformance.pdf
 questo ha veramente molto da cui prendere spunto: https://www.doc.ic.ac.uk/~rbc/papers/fse-serverless-17.pdf
+in questa c'è molto materiale, dati ecc: https://research.vu.nl/ws/portalfiles/portal/220366225/The_State_of_Serverless_Applications_Collection_Characterization_and_Community_Consensus.pdf
+roba interessante: https://arxiv.org/pdf/1902.03383
+roba interessante (da vedere bene): https://arxiv.org/pdf/2008.11110
+roba interessante (da vedere bene): https://arxiv.org/pdf/1911.01296
+confronto tra le tre piattaforme: https://eudl.eu/pdf/10.4108/eai.27-2-2020.2303255
+altro confronto: https://ieeexplore.ieee.org/stamp/stamp.jsp?tp=&arnumber=9673425
+alto confronto: https://www.researchgate.net/profile/Muhammad-Ayoub-Kamal/publication/340173446_Highlight_the_Features_of_AWS_GCP_and_Microsoft_Azure_that_Have_an_Impact_when_Choosing_a_Cloud_Service_Provider/links/5e7c397c92851caef49d994f/Highlight-the-Features-of-AWS-GCP-and-Microsoft-Azure-that-Have-an-Impact-when-Choosing-a-Cloud-Service-Provider.pdf
+spunti interessanti: http://wpage.unina.it/a.botta/pub/COMNET_AWS.pdf
+
+6,7,10,11 da leggere bene ancora
