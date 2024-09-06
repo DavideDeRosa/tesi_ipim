@@ -13,3 +13,6 @@ spunti interessanti: http://wpage.unina.it/a.botta/pub/COMNET_AWS.pdf
 6,7,10,11 da leggere bene ancora
 
 devo mettere la fonte di  Berkeley View !!!
+
+12. robe per aws: https://riunet.upv.es/bitstream/handle/10251/139362/Gim%C3%A9nez-Alventosa?sequence=7
+13. potrebbe risultare utile: https://home.agh.edu.pl/~malawski/Hyperflow_Functions_FGCS-preprint.pdf
