@@ -4,15 +4,15 @@ Cercando nei servizi offerti il servizio \textit{Lambda} si accede alla sua cons
 
 Il processo di creazione è piuttosto intuitivo. Viene offerta la possibilità di utilizzare un piano (per casi comuni preconfigurati) o di fornire un'immagine di un container per distribuire la funzione. Nel caso base, invece, è possibile configurare il \textit{nome della funzione}, il \textit{runtime} (sono disponibili diversi runtime per i linguaggi Python, NodeJS, Java, Ruby e .NET) e l'\textit{architettura} del set di istruzioni desiderata (x86\_64 o arm64).
 
-Vengono richieste inoltre le \textit{autorizzazioni} della funzione. In caso di semplici funzioni non sarà necessario aggiungere ulteriori autorizzazioni oltre a quelle predefinite. Nel nostro caso studio utilizzeremo un ruolo personalizzato per consentire alla funzione di accedere ad un database NoSQL. Si parlerà quindi successivamente della creazione di ruoli per aggiungere autorizzazioni alla funzione.
+Vengono richieste inoltre le \textit{autorizzazioni} della funzione. In caso di semplici funzioni non sarà necessario aggiungere ulteriori autorizzazioni oltre a quelle predefinite. Nel nostro \textit{caso studio} utilizzeremo un ruolo personalizzato per consentire alla funzione di accedere ad un database serverless. Si parlerà quindi successivamente della creazione di ruoli per aggiungere autorizzazioni alla funzione.
 
 Creata la funzione, si può accedere alla sua pagina dedicata. Oltre ad una panoramica della funzione, la quale mostra se sono collegati \textit{trigger} o \textit{destinazioni} alla nostra funzione, è possibile modificare il \textit{codice della funzione} attraverso un comodo editor di testo. E' possibile eseguire \textit{test}, monitorare lo stato tramite \textit{CloudWatch}, gestire \textit{alias} e \textit{versioni}, e modificare le diverse configurazioni della funzione.
 
-Per esporre la funzione tramite una semplice richiesta HTTP, bisogna aggiungere un \textit{trigger} alla nostra \textit{lambda function}. E' possibile utilizzare il servizio \textit{API Gateway} offerto da AWS. Accedendo al servizio è possibile, come per \textit{Lambda}, creare nuove API o selezionarne una creata in precedenza.
+Per esporre la funzione tramite una semplice richiesta HTTP, bisogna aggiungere un \textit{trigger} alla nostra \textit{Lambda Function}. E' possibile utilizzare il servizio \textit{API Gateway} offerto da AWS. Accedendo al servizio è possibile, come per \textit{Lambda}, creare nuove API o selezionarne una creata in precedenza.
 
 Il processo di creazione richiede inizialmente di scegliere il tipo di API. I tipi disponibili sono \textit{API HTTP}, \textit{API WebSocket}, \textit{API REST} ed \textit{API REST privata}. Nel nostro caso, la prima è più che sufficiente.
-Selezionato il tipo, verrà richiesto il \textit{nome dell'API} e l'\textit{integrazione} (servizi di back-end con cui comunicherà l'API). L'integrazione da scegliere corrisponde alla \textit{lambda function} creata in precedenza.
+Selezionato il tipo, verrà richiesto il \textit{nome dell'API} e l'\textit{integrazione} (servizi di back-end con cui comunicherà l'API). L'integrazione da scegliere corrisponde alla \textit{Lambda Function} creata in precedenza.
 
 Creata l'API, sarà possibile configurare i suoi diversi \textit{instradamenti}, scegliendo il \textit{metodo HTTP} ed il \textit{nome del percorso}. Per completare l'integrazione tra la funzione ed il suo instradamento, bisogna collegare ogni singolo instradamento alla funzione, selezionando l'integrazione nell'apposita schermata.
 
-Completati questi step, la nostra \textit{lambda function} sarà accessibile dall'esterno tramite un \textit{endpoint API}.
+Completati questi step, la nostra \textit{Lambda Function} sarà accessibile dall'esterno tramite un \textit{endpoint API}.

@@ -1,0 +1,15 @@
+L'integrazione di \textit{DynamoDB} con le \textit{Lambda Functions} parte proprio dalla creazione di quest'ultime. Per poter accedere al servizio di database bisogna concedere alcune autorizzazioni alla funzione. Questo può essere fatto durante la fase di creazione, come menzionato in precedenza.
+
+Per creare un nuovo ruolo, bisogna accedere al servizio \textit{IAM}. Andando nella sezione \textit{Ruoli} sarà possibile creare un nuovo ruolo o modificarne uno creato in precedenza.
+
+Durante il processo di creazione, bisogna selezionare il \textit{tipo di entità attendibile} (nel nostro caso \textit{Servizio AWS}, il quale permette ai servizi AWS di eseguire operazioni sull'account) ed il \textit{caso d'uso} (nel nostro caso \textit{Lambda}, permettendo alle Lambda Functions di richiamare servizi AWS).
+
+Successivamente, andranno selezionate le \textit{policy} da collegare al nuovo ruolo. Nel nostro caso specifico andranno selezionate le policy \textit{AmazonDynamoDBFullAccess} e \textit{CloudWatchFullAccess}.
+
+Per concludere la creazione sarà necessario dare un \textit{nome ed una descrizione} al ruolo, e se necessario aggiungere un \textit{tag}.
+
+Una volta creato il ruolo personalizzato ed associato alla Lambda, il database sarà accessibile dalla nostra funzione.
+
+Prendendo come esempio una funzione scritta in Python, basterà importare la libreria \textit{boto3}, la quale permette il collegamento al database. Specificando il nome della tabella, sarà possibile interagire con il nostro database DynamoDB.
+
+Alcuni esempi di codice verranno mostrati nel \textit{caso studio} successivamente.

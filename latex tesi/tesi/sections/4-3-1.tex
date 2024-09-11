@@ -1,0 +1,11 @@
+\textit{Firestore} è un \textit{database serverless schemaless} con funzionalità di notifica in tempo reale, semplificando notevolmente lo sviluppo di applicazioni web e mobili. È in grado di gestire milioni di query al secondo e petabyte di dati memorizzati.
+
+Inoltre, con un basso consumo di QPS (query al secondo) e di storage, Firestore ha un costo irrisorio.
+
+Alcuni aspetti chiave del successo di Firestore sono:
+\begin{itemize}
+    \item \textbf{Facilità d'uso}. Lo sviluppo di applicazioni moderne trae vantaggio dalla rapidità dell'iterazione e del deployment. Il modello di dati schemaless di Firestore, le transazioni \textit{ACID}, la forte coerenza e l'indicizzazione di tutti i dati predefiniti consentono agli sviluppatori di concentrarsi principalmente sui dati che desiderano memorizzare e presentare all'utente finale, senza preoccuparsi dei dettagli della configurazione del database.
+    \item \textbf{Funzionamento serverless e scalabilità rapida}. Alcune applicazioni diventano virali e questo comporta problemi di scalabilità dell'infrastruttura con l'aumento del carico, dello storage e dei costi. Con Firestore, lo sviluppatore dell'applicazione deve solo creare una pagina web (statica) o un'applicazione e inizializzare un database Firestore per consentire agli utenti finali di archiviare e condividere i dati. Le richieste di database degli utenti finali vengono indirizzate direttamente a Firestore, senza la necessità di un server dedicato che esegua il controllo degli accessi grazie alle regole di sicurezza impostate dallo sviluppatore. L'API di Firestore incoraggia un utilizzo che scala indipendentemente dalle dimensioni del database e dal traffico.
+    La tariffazione a consumo di Firestore, insieme a una quota giornaliera gratuita, garantisce che gli aumenti di fatturazione riflettano il successo dell'applicazione.
+    \item \textbf{Query in tempo reale flessibili ed efficienti}. Un'applicazione ha spesso bisogno di inviare notifiche veloci a sottoinsiemi potenzialmente ampi di dispositivi web o mobili per molte ragioni, come la comunicazione tra utenti.\cite{kesavan2023firestore}
+\end{itemize}
