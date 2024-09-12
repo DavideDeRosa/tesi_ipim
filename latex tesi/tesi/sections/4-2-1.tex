@@ -1,1 +1,14 @@
-DynamoDB
+\textit{DynamoDB} è un servizio di \textit{database cloud NoSQL} progettato per offrire prestazioni rapide e costanti a qualsiasi scala. Questo servizio, parte integrante dell'infrastruttura AWS, supporta centinaia di migliaia di clienti utilizzando una vasta rete di server distribuiti globalmente.
+
+Gli utenti apprezzano DynamoDB per la sua capacità di rispondere alle richieste con una latenza costantemente bassa, con l'obiettivo di mantenere i tempi di risposta nell'ordine di pochi millisecondi.
+
+DynamoDB si distingue per l'integrazione di alcune caratteristiche fondamentali, pensate per semplificare la vita di clienti e sviluppatori:
+\begin{itemize}
+    \item \textbf{Servizio completamente gestito}. Grazie all'API di DynamoDB, le applicazioni possono creare tabelle, leggere e scrivere dati senza doversi preoccupare della gestione fisica o del mantenimento del database. DynamoDB si occupa di tutto: provisioning delle risorse, recupero da guasti, crittografia dei dati, aggiornamenti software, backup e altre operazioni di gestione.
+    \item \textbf{Architettura multi-tenant}. DynamoDB ospita i dati di diversi clienti sulle stesse risorse fisiche, ottimizzando l'uso delle risorse e permettendo un risparmio sui costi che viene trasferito ai clienti. Ogni carico di lavoro è isolato grazie al monitoraggio dell'utilizzo e al provisioning accurato delle risorse.
+    \item \textbf{Scalabilità illimitata}. Non ci sono limiti predefiniti sulla quantità di dati che una tabella può contenere. DynamoDB si espande elasticamente in base alle esigenze delle applicazioni, scalando da pochi a migliaia di server per soddisfare la domanda di storage e throughput.
+    \item \textbf{Prestazioni prevedibili}. L'API semplificata di DynamoDB consente di gestire le richieste con bassa latenza, che generalmente rimane nell'ordine di millisecondi per i dati archiviati nella stessa regione AWS. Le latenze restano stabili anche quando le tabelle crescono da pochi MB a centinaia di TB, grazie alla distribuzione dei dati e al bilanciamento del carico.
+    \item \textbf{Alta disponibilità}. I dati sono replicati automaticamente su più \textit{Availability Zone} di AWS, garantendo continuità anche in caso di guasti a dischi o nodi, soddisfacendo così i requisiti più stringenti di disponibilità e durabilità.
+    \item \textbf{Flessibilità d'uso}. DynamoDB non impone uno schema fisso per le tabelle, permettendo agli sviluppatori di creare modelli di dati personalizzati, inclusi attributi multivalore. Supporta modelli di dati chiave-valore o documento.
+\end{itemize}
+Queste caratteristiche fanno di DynamoDB una soluzione ideale per chi cerca un database cloud altamente scalabile, performante e affidabile.\cite{elhemaliamazon}
