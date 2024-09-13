@@ -1,0 +1,16 @@
+Questo approccio rappresenta la forma più pura dei \textit{pattern serverless}. Ogni funzione ha un suo file, ed esegue una singola chiamata API.
+
+I vantaggi di questo approccio sono:
+\begin{itemize}
+    \item Massima riusabilità del codice.
+    \item Si viene spinti a scrivere codice testabile.
+    \item Minor carico cognitivo per gli sviluppatori che modificano la specifica funzione.
+    \item Miglior ottimizzazione dei tempi di esecuzione, e di conseguenza dei costi.
+\end{itemize}
+
+Gli svantaggi invece sono:
+\begin{itemize}
+    \item Approccio funzionante solo per architetture completamente \textit{event-driven}.
+    \item Soffermandosi sul quadro generale, il carico cognitivo aumenta quando si parla di modifiche a livello di sistema.
+    \item La manutenzione aumenta man mano che le funzioni crescono di numero.
+\end{itemize}

@@ -1,0 +1,15 @@
+Con il seguente approccio viene creata una singola funzione, nella quale è presente tutto il codice per gestire le diverse chiamate API presenti. Per decidere cosa inserire nella stessa funzione, piuttosto di crearne una nuova, si possono usare principi di sviluppo tradizionali come il \textit{low coupling} e la \textit{high cohesion}.
+
+I vantaggi di questo approccio sono:
+\begin{itemize}
+    \item Tutta la logica relativa al contesto viene raggruppata in un unico luogo, rendendo il codice più leggibile.
+    \item Il codice può essere riutilizzato tra le diverse funzioni.
+    \item Il \textit{security footprint} è ridotto, aggiornando un singolo file permette l'aggiornamento di molte funzioni.
+\end{itemize}
+
+\vspace*{40pt}
+Gli svantaggi invece sono:
+\begin{itemize}
+    \item Difficoltà nel capire quando creare una nuova funzione. Ogni byte di codice extra rallenta il tempo di \textit{cold start} della funzione.
+    \item Aumento del raggio d'azione delle modifiche sul codice. La modifica di una singola riga di codice potrebbe far crollare una sezione dell'infrastruttura piuttosto di una singola funzione.
+\end{itemize}
