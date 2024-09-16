@@ -4,37 +4,26 @@ import boto3
 client = boto3.client('dynamodb')
 dynamodb = boto3.resource("dynamodb")
 table = dynamodb.Table('product-inventory')
-tableName = 'product-inventory'
 
 def lambda_handler(event, context):
-    print(event)
-
     body = {}
     statusCode = 200
 
     try:
-        if event['routeKey'] == "GET /health":
-            body = "Health check!"
-        elif event['routeKey'] == "DELETE /items/{id}":
-            table.delete_item(
-                Key={'id': event['pathParameters']['id']})
+        if event['routeKey'] == "DELETE /items/{id}":
+            table.delete_item(Key={'id': event['pathParameters']['id']})
             body = 'Deleted item ' + event['pathParameters']['id']
         elif event['routeKey'] == "GET /items/{id}":
-            body = table.get_item(
-                Key={'id': event['pathParameters']['id']})
+            body = table.get_item(Key={'id': event['pathParameters']['id']})
             body = body["Item"]
-            responseBody = [
-                {'price': body['price'], 'id': body['id'], 'name': body['name'], 'description': body['description']}]
+            responseBody = [{'price': body['price'], 'id': body['id'], 'name': body['name'], 'description': body['description']}]
             body = responseBody
         elif event['routeKey'] == "GET /items":
             body = table.scan()
             body = body["Items"]
-            print("ITEMS----")
-            print(body)
             responseBody = []
             for items in body:
-                responseItems = [
-                    {'price': items['price'], 'id': items['id'], 'name': items['name'], 'description': items['description']}]
+                responseItems = [{'price': items['price'], 'id': items['id'], 'name': items['name'], 'description': items['description']}]
                 responseBody.append(responseItems)
             body = responseBody
         elif event['routeKey'] == "PUT /items":

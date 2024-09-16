@@ -4,11 +4,8 @@ import boto3
 client = boto3.client('dynamodb')
 dynamodb = boto3.resource("dynamodb")
 table = dynamodb.Table('product-inventory')
-tableName = 'product-inventory'
 
 def lambda_handler(event, context):
-    print(event)
-
     body = {}
     statusCode = 200
 
