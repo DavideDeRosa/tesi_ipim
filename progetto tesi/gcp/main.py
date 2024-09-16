@@ -13,9 +13,7 @@ def function(request):
     statusCode = 200
 
     try:
-        if path == "/health" and method == "GET":
-            body = "Health check!"
-        elif path.startswith("/items/") and method == "DELETE":
+        if path.startswith("/items/") and method == "DELETE":
             item_id = path.split('/')[-1]
             doc_ref = client.collection(collection_name).document(item_id)
             doc_ref.delete()
@@ -26,9 +24,7 @@ def function(request):
             doc = doc_ref.get()
             if doc.exists:
                 doc_dict = doc.to_dict()
-                responseBody = [
-                    {'price': doc_dict['price'], 'id': doc.id, 'name': doc_dict['name'], 'description': doc_dict['description']}
-                ]
+                responseBody = [{'price': doc_dict['price'], 'id': doc.id, 'name': doc_dict['name'], 'description': doc_dict['description']}]
                 body = responseBody
             else:
                 statusCode = 404
@@ -38,9 +34,7 @@ def function(request):
             responseBody = []
             for doc in docs:
                 doc_dict = doc.to_dict()
-                responseItems = [
-                    {'price': doc_dict['price'], 'id': doc.id, 'name': doc_dict['name'], 'description': doc_dict['description']}
-                ]
+                responseItems = [{'price': doc_dict['price'], 'id': doc.id, 'name': doc_dict['name'], 'description': doc_dict['description']}]
                 responseBody.append(responseItems)
             body = responseBody
         elif path == "/items" and method == "PUT":

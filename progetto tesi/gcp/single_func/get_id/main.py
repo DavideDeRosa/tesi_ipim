@@ -18,9 +18,7 @@ def function(request):
             doc = doc_ref.get()
             if doc.exists:
                 doc_dict = doc.to_dict()
-                responseBody = [
-                    {'price': doc_dict['price'], 'id': doc.id, 'name': doc_dict['name'], 'description': doc_dict['description']}
-                ]
+                responseBody = [{'price': doc_dict['price'], 'id': doc.id, 'name': doc_dict['name'], 'description': doc_dict['description']}]
                 body = responseBody
             else:
                 statusCode = 404
