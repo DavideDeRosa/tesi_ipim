@@ -1,0 +1,11 @@
+Il \textit{caso studio} viene accompagnato da diversi script \textit{Python}, leggermente diversi tra le due piattaforme e tra i due approcci.
+
+L'obiettivo della soluzione software proposta è quella di fornire funzionalità \textit{CRUD} ipotizzando la presenza di un \textit{inventario} da riempire con dei \textit{prodotti}. Tutti i dati inerenti all'inventario verranno quindi salvati in un database.
+
+La soluzione presenta i seguenti metodi HTTP:
+\begin{itemize}
+    \item \textbf{GET /items}: permette di ottenere la lista di tutti i prodotti presenti nell'inventario.
+    \item \textbf{PUT /items}: permette di inserire o modificare un prodotto presente nell'inventario.
+    \item \textbf{GET /items/\{id\}}: permette di ottenere un singolo prodotto dell'inventario specificando un \textit{identificativo} univoco, se presente.
+    \item \textbf{DELETE /items/\{id\}}: permette di eliminare un singolo prodotto dell'inventario specificando un \textit{identificativo} univoco.
+\end{itemize}

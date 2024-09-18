@@ -1,0 +1,43 @@
+L'approccio a funzione per ogni chiamata si distingue dal precedente per la sua suddivisione in diverse \textit{Lambda Function}, ognuna delegata alla gestione di un singolo metodo HTTP.
+
+Per il database vale il discorso del precedente approccio.
+
+Gli script utilizzati sono simili allo script della funzione unica, rimuovendo la presenza degli altri metodi HTTP non gestiti dalla specifica funzione.
+
+Viene mostrato come riferimento solo uno dei quattro script, nello specifico il metodo \textit{GET /items/\{id\}}:
+\begin{lstlisting}[language=python]
+import json
+import boto3
+
+client = boto3.client('dynamodb')
+dynamodb = boto3.resource("dynamodb")
+table = dynamodb.Table('product-inventory')
+
+def lambda_handler(event, context):
+    body = {}
+    statusCode = 200
+
+    try:
+        body = table.get_item(Key={'id': event['pathParameters']['id']})
+        body = body["Item"]
+        responseBody = [{'price': body['price'], 'id': body['id'], 'name': body['name'], 'description': body['description']}]
+        body = responseBody
+    except KeyError:
+        statusCode = 400
+        body = 'Unsupported route: ' + event['routeKey']
+    
+    body = json.dumps(body)
+    res = {
+        "statusCode": statusCode,
+        "headers": {
+            "Content-Type": "application/json"
+        },
+        "body": body
+    }
+
+    return res
+\end{lstlisting}
+
+E' quindi possibile osservare come la struttura sia la medesima tra i due approcci, dividendo però la funzione unica in quattro funzioni specifiche, ognuna con una responsabilità differente.
+
+In questo caso, i percorsi creati in \textit{API Gateway} puntano alla funzione specifica.
