@@ -1,1 +1,30 @@
-Performance
+Per le \textit{performance} si è deciso di testare la \textit{latenza} dell'API.
+
+Per \textit{latenza} si intende il tempo che un'API impiega per elaborare una richiesta ed inviare una risposta, compresi eventuali ritardi di rete o di elaborazione. Può essere influenzata da vari fattori, come la velocità della connessione di rete, il tempo di elaborazione dell'API e la quantità di dati trasferiti.
+
+Nel nostro caso andremo a testare la latenza ottenuta in caso di \textit{cold startup} e non, osservando le possibili differenze anche tra i due approcci di API.
+
+La fase di testing consiste nel misurare la latenza effettuando una media di 10 chiamate, escludendo i due valori estremi.\\
+In entrambi i casi viene testato il metodo \textit{GET /items}.
+
+I risultati ottenuti per \textit{Lambda} sono:
+\begin{table}[H]
+    \centering
+    \begin{tabular}{|c|c|c|}
+    \hline
+        \textbf{} & \textbf{Funzione Unica} & \textbf{Funzione Singola} \\ \hline
+        Cold Startup & 585 ms & 556 ms \\ \hline
+        Normale & 84 ms & 86 ms \\ \hline
+    \end{tabular}
+\end{table}
+
+I risultati ottenuti per \textit{Cloud Functions} sono:
+\begin{table}[H]
+    \centering
+    \begin{tabular}{|c|c|c|}
+    \hline
+        \textbf{} & \textbf{Funzione Unica} & \textbf{Funzione Singola} \\ \hline
+        Cold Startup & 419 ms & 288 ms \\ \hline
+        Normale & 113 ms & 106 ms \\ \hline
+    \end{tabular}
+\end{table}

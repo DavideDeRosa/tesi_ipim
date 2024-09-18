@@ -1,0 +1,43 @@
+TEST FUNZIONE UNICA:
+    TEST COLD STARTUP 1: 2320ms escluso
+    TEST COLD STARTUP 2: 403ms
+    TEST COLD STARTUP 3: 441ms
+    TEST COLD STARTUP 4: 363ms escluso
+    TEST COLD STARTUP 5: 412ms
+
+    TEST NORMALE 1: 136ms escluso
+    TEST NORMALE 2: 95ms escluso
+    TEST NORMALE 3: 123ms
+    TEST NORMALE 4: 120ms
+    TEST NORMALE 5: 113ms
+    TEST NORMALE 6: 135ms
+    TEST NORMALE 7: 100ms
+    TEST NORMALE 8: 98ms
+    TEST NORMALE 9: 117ms
+    TEST NORMALE 10: 102ms
+
+TEST FUNZIONE GET /ITEMS:
+    TEST COLD STARTUP 1: 2330ms escluso
+    TEST COLD STARTUP 2: 392ms
+    TEST COLD STARTUP 3: 285ms
+    TEST COLD STARTUP 4: 187ms
+    TEST COLD STARTUP 5: 153ms escluso
+
+    TEST NORMALE 1: 119ms
+    TEST NORMALE 2: 118ms
+    TEST NORMALE 3: 92ms
+    TEST NORMALE 4: 105ms
+    TEST NORMALE 5: 110ms
+    TEST NORMALE 6: 97ms
+    TEST NORMALE 7: 111ms
+    TEST NORMALE 8: 88ms escluso
+    TEST NORMALE 9: 95ms
+    TEST NORMALE 10: 130ms escluso
+
+RISULTATI:
+
+media cold startup funzione unica: 419ms
+media cold startup funzione singola: 288ms
+
+media normale funzione unica: 113ms
+media normale funzione singola: 106ms
