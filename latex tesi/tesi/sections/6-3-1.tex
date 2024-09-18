@@ -1,9 +1,3 @@
-Prima di iniziare, va fatta una piccola premessa che vale per entrambe le implementazioni su \textit{Google Cloud Functions}. Per un corretto funzionamento delle librerie Python, insieme allo script vanno specificati i suoi \textit{requirements} all'interno di un file \textit{.txt}. Per tutti gli script utilizzati per il caso studio, i requisiti sono i seguenti:
-\begin{lstlisting}
-functions-framework==3.*
-google-cloud-firestore
-\end{lstlisting}
-
 Anche per l'implementazione su \textit{Cloud Functions}, l'approccio a funzione unica si basa su una singola funzione che gestisce tutte le chiamate API presenti.
 
 In questo caso il database utilizzato è il precedentemente citato \textit{Firestore}. A differenza di \textit{AWS}, \textit{GCP} non richiede ruoli aggiuntivi per consentire alle proprie funzioni serverless di accedere al database.
