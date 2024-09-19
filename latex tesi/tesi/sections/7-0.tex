@@ -1,0 +1,21 @@
+Osservando i risultati ottenuti dopo il \textit{processo di testing} e di \textit{analisi} è possibile arrivare ad alcune conclusioni.
+
+Premettendo che tutti i dati ottenuti non sono in alcun modo perfetti, e di conseguenza le conclusioni non vogliono affermare una verità assoluta, si può procedere ad un confronto tra le due piattaforme.
+
+Per quanto riguarda le \textit{performance}, le \textit{Lambda Functions} tendono ad avere una \textit{latenza minore}, sia in casi di \textit{cold startup} che non, rispetto alle \textit{Cloud Functions}.
+
+E' possibile osservare inoltre come i due approcci di scrittura delle API non portino quasi alcun tipo di differenza sulla latenza nel nostro caso studio, potendo quindi affermare che in casi con funzioni non molto lunghe è indifferente l'approccio scelto. Ovviamente, all'aumentare della lunghezza della funzione, la funzione unica arriverà ad avere latenze maggiori.
+
+Durante la fase di testing è stato possibile notare anche un altro piccolo dettaglio. \textit{Lambda} esegue \textit{cold startup} molto più frequentemente di \textit{Cloud Functions}, dove la funzione tende a reagire in maniera più reattiva anche dopo un periodo di inattività più lungo.
+
+Per quanto riguarda i \textit{costi}, \textit{AWS} offre di gran lunga un costo più vantaggioso, inferiore a \textit{GCP} di \textit{0,17\$} per milione di richieste.
+
+Va però ribadito il numero di richieste gratis al mese offerto da entrambe le piattaforme, dove \textit{Google} offre il doppio delle richieste rispetto ad \textit{Amazon}. In progetti di dimensioni ridotte, o con un numero di richieste mensile ridotto, la possibilità di non pagare alcuna cifra al di sotto delle 2 milioni di richieste potrebbe portare piccoli team di sviluppo a scegliere la piattaforma offerta da \textit{Google}.
+
+Per concludere, la \textit{facilità di deploy} offerta da entrambe le piattaforme è più che soddisfacente, con \textit{Cloud Functions} che risulta essere più immediata da configurare e subito pronta all'uso.
+
+Un aspetto dove \textit{Amazon} vince con un netto distacco è la presenza di documentazione ufficiale e di progetti d'esempio ben fatti, i quali consentono agli sviluppatori alle prime armi nel mondo \textit{serverless} di avere esempi di qualità come riferimento.
+
+Dovendo proclamare una sorta di "vincitore" (pur sempre personale) tra le due piattaforme, mi sento di affermare che \textit{AWS Lambda} sia leggermente migliore di \textit{GCP Cloud Functions}, con costi per richiesta inferiori e miglior documentazione, nonostante una fase di deploy più lunga.
+
+Questa conclusione è in linea con l'utilizzo generale delle piattaforme nel mondo serverless, dove \textit{AWS} ha una percentuale di utlizzo nettamente maggiore rispetto ai competitors, coprendo circa l'\textit{80\% del mercato}\cite{eismann2021state}.
