@@ -145,17 +145,13 @@ De Rosa Davide}}
 
 \restoregeometry
 \newpage
-\begin{center}
-    (DA FARE ALLA FINE)\\
-    5 parole chiave per caratterizzare il contenuto della dissertazione:\\ (se non ti piacciono così sparse puoi anche semplicamente scriverle su una riga sola)
-\end{center}
 
 % https://tex.stackexchange.com/questions/26538/words-scattered-randomly-in-on-coverpage
 \begin{tikzpicture}[overlay,remember picture,shift=(current page.center)]
 \pgfmathsetseed{3}
 
 
-\foreach [count=\count] \word in {Parola 1, parola 2, parola 3, parola 4, parola 5} {
+\foreach [count=\count] \word in {\textit{FaaS}, \textit{AWS Lambda}, \textit{Google Cloud Functions}, \textit{Cloud Computing}, \textit{Serverless}} {
 \node [
     xshift={(mod(\count,3)-1)*(\paperwidth/4)},
     yshift={(mod(\count,7)-3)*(\paperwidth/6)},
@@ -171,14 +167,10 @@ De Rosa Davide}}
 \newpage~\newpage
 \pagenumbering{gobble}
 \chapter*{Abstract}
-abstract
+\input{sections/abstract.tex}
 
 \topmargin=-1cm
 \tableofcontents
-\thispagestyle{empty}
-\listoftables
-\thispagestyle{empty}
-\listoffigures
 \thispagestyle{empty}
 \newpage~\newpage
 
@@ -188,15 +180,15 @@ abstract
 \chapter{Introduzione} \label{chap:intro}
 \pagestyle{plain}
 \setcounter{page}{1}
-da fare alla fine
+\input{sections/1-0.tex}
 \section{Scopo della Tesi}
-Introduzione agli obiettivi della tesi, come il confronto tra soluzioni serverless e l'analisi di AWS e Google Cloud.
+\input{sections/1-1.tex}
 
 \section{Metodologia}
-Descrizione dell'approccio adottato per l'analisi e il confronto delle due piattaforme.
+\input{sections/1-2.tex}
  
 \section{Struttura della Tesi}
-Breve descrizione dei capitoli successivi.
+\input{sections/1-3.tex}
 
 \chapter{Nozioni di base su Serverless}
 
@@ -290,8 +282,32 @@ Breve descrizione dei capitoli successivi.
 \chapter{Discussione dei Risultati}
 \input{sections/7-0.tex}
 
+\section{Performance}
+\input{sections/7-1.tex}
+
+\section{Costi}
+\input{sections/7-2.tex}
+
+\section{Usabilità e Facilità di Deploy}
+\input{sections/7-3.tex}
+
+\section{Risultati finali}
+\input{sections/7-4.tex}
+
 \chapter{Conclusioni}
-conclusioni
+\input{sections/8-0.tex}
+
+\section{Riassunto dei Risultati}
+\input{sections/8-1.tex}
+
+\section{Implicazioni dello studio}
+\input{sections/8-2.tex}
+
+\section{Limitazioni dello studio}
+\input{sections/8-3.tex}
+
+\section{Sviluppi futuri}
+\input{sections/8-4.tex}
 
 \renewcommand{\bibsection}{}
 \chapter*{Riferimenti bibliografici}

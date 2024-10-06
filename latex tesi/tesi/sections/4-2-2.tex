@@ -1,4 +1,4 @@
-L'integrazione di \textit{DynamoDB} con le \textit{Lambda Functions} parte proprio dalla creazione di quest'ultime. Per poter accedere al servizio di database bisogna concedere alcune autorizzazioni alla funzione. Questo può essere fatto durante la fase di creazione, come menzionato in precedenza.
+L'integrazione di \textit{DynamoDB} con le \textit{Lambda Functions} parte proprio dalla creazione di queste ultime. Per poter accedere al servizio di database bisogna concedere alcune autorizzazioni alla funzione. Questo può essere fatto durante la fase di creazione, come menzionato in precedenza.
 
 Per creare un nuovo ruolo, bisogna accedere al servizio \textit{IAM}. Andando nella sezione \textit{Ruoli} sarà possibile creare un nuovo ruolo o modificarne uno creato in precedenza.
 
@@ -12,4 +12,4 @@ Una volta creato il ruolo personalizzato ed associato alla Lambda, il database s
 
 Prendendo come esempio una funzione scritta in Python, basterà importare la libreria \textit{boto3}, la quale permette il collegamento al database. Specificando il nome della tabella, sarà possibile interagire con il nostro database DynamoDB.
 
-Alcuni esempi di codice verranno mostrati nel \textit{caso studio} successivamente.
+Alcuni esempi di codice verranno mostrati successivamente nel \textit{caso studio}.

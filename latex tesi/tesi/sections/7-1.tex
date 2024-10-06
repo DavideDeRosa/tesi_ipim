@@ -1,0 +1,5 @@
+Per quanto riguarda le \textit{performance}, le \textit{Lambda Functions} tendono ad avere una \textit{latenza minore}, sia in casi di \textit{cold startup} che non, rispetto alle \textit{Cloud Functions}.
+
+E' possibile osservare inoltre come i due approcci di scrittura delle API non portino quasi alcun tipo di differenza sulla latenza nel nostro caso studio, potendo quindi affermare che in casi con funzioni non molto lunghe è indifferente l'approccio scelto. Ovviamente, all'aumentare della lunghezza della funzione, la funzione unica arriverà ad avere latenze maggiori.
+
+Durante la fase di testing è stato possibile notare anche un altro piccolo dettaglio. \textit{Lambda} esegue \textit{cold startup} molto più frequentemente di \textit{Cloud Functions}, dove la funzione tende a reagire in maniera più reattiva anche dopo un periodo di inattività più lungo.
