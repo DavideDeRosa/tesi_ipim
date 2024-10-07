@@ -8,23 +8,27 @@ La fase di testing consiste nel misurare la latenza effettuando una media di 10 
 In entrambi i casi viene testato il metodo \textit{GET /items}.
 
 I risultati ottenuti per \textit{Lambda} sono:
-\begin{table}[H]
-    \centering
-    \begin{tabular}{|c|c|c|}
-    \hline
-        \textbf{} & \textbf{Funzione Unica} & \textbf{Funzione Singola} \\ \hline
-        Cold Startup & 585 ms & 556 ms \\ \hline
-        Normale & 84 ms & 86 ms \\ \hline
-    \end{tabular}
+\begin{table}[htbp]
+\centering
+\begin{tabular}{lcc}
+\toprule
+ & \textbf{Funzione Unica} & \textbf{Funzione Singola} \\
+\midrule
+Cold Startup & 585 ms & 556 ms \\ 
+Normale & 84 ms & 86 ms \\
+\bottomrule
+\end{tabular}
 \end{table}
 
 I risultati ottenuti per \textit{Cloud Functions} sono:
-\begin{table}[H]
-    \centering
-    \begin{tabular}{|c|c|c|}
-    \hline
-        \textbf{} & \textbf{Funzione Unica} & \textbf{Funzione Singola} \\ \hline
-        Cold Startup & 857 ms & 802 ms \\ \hline
-        Normale & 113 ms & 106 ms \\ \hline
-    \end{tabular}
+\begin{table}[htbp]
+\centering
+\begin{tabular}{lcc}
+\toprule
+ & \textbf{Funzione Unica} & \textbf{Funzione Singola} \\
+\midrule
+Cold Startup & 857 ms & 802 ms \\
+Normale & 113 ms & 106 ms \\
+\bottomrule
+\end{tabular}
 \end{table}
